@@ -35,13 +35,6 @@ class ChukchiASR:
     def transcribe_file(self, audio_path):
         audio = asr_utils.load_audio(audio_path)
         return self.transcribe(audio)
-    
-    def transcribe_batch(self, audio_paths):
-        results = []
-        for i, audio_path in enumerate(audio_paths):
-            transcription = self.transcribe_file(audio_path)
-            results.append(transcription)
-        return results
 
 def calculate_metrics(predictions, references):
     """
